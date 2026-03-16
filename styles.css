@@ -910,8 +910,8 @@ button {
   --structure-left: 282px;
   --structure-top: 413px;
   --structure-z: 460;
-  --structure-width: 112px;
-  --structure-height: 119px;
+  --structure-width: 132px;
+  --structure-height: 139px;
 }
 
 .structure-library[data-level="3"] {
