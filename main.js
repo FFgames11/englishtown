@@ -143,12 +143,32 @@ const propertyCatalog = {
     art: {
       levels: {
         1: './assets/buildings/banklv1.png',
+        2: './assets/buildings/banklv2.png',
+        3: './assets/buildings/banklv3.png',
       },
       width: 122,
       height: 122,
       position: {
         left: 395,
         top: 93,
+      },
+      levelStyles: {
+        2: {
+          width: 108,
+          height: 108,
+          position: {
+            left: 403,
+            top: 102,
+          },
+        },
+        3: {
+          width: 112,
+          height: 112,
+          position: {
+            left: 408,
+            top: 102,
+          },
+        },
       },
       zIndex: 0,
     },
@@ -757,19 +777,42 @@ function getArtStructureOffset(tile) {
   return { x: -tileWidth, y: 0 };
 }
 
-function getStructureStyle(tile) {
+function getPropertyArtConfig(propertyArt, propertyLevel) {
+  if (!propertyArt) {
+    return null;
+  }
+
+  const targetLevel = Math.max(propertyLevel, 1);
+  const levelStyle = propertyArt.levelStyles?.[targetLevel];
+
+  if (!levelStyle) {
+    return propertyArt;
+  }
+
+  return {
+    ...propertyArt,
+    ...levelStyle,
+    position: {
+      ...(propertyArt.position ?? {}),
+      ...(levelStyle.position ?? {}),
+    },
+  };
+}
+
+function getStructureStyle(tile, propertyLevel = 0) {
   if (tile.propertyArt) {
-    const width = tile.propertyArt.width ?? tileWidth;
-    const height = tile.propertyArt.height ?? Math.round(width / (tile.propertyArt.aspectRatio ?? 1));
-    const fixedLeft = tile.propertyArt.position?.left;
-    const fixedTop = tile.propertyArt.position?.top;
+    const propertyArt = getPropertyArtConfig(tile.propertyArt, propertyLevel);
+    const width = propertyArt.width ?? tileWidth;
+    const height = propertyArt.height ?? Math.round(width / (propertyArt.aspectRatio ?? 1));
+    const fixedLeft = propertyArt.position?.left;
+    const fixedTop = propertyArt.position?.top;
     const left = Number.isFinite(fixedLeft)
       ? fixedLeft
       : tile.screenX + getArtStructureOffset(tile).x + (tileWidth - width) / 2;
     const top = Number.isFinite(fixedTop)
       ? fixedTop
-      : tile.screenY + getArtStructureOffset(tile).y - (tile.propertyArt.rise ?? Math.max(height - tileHeight, 0));
-    const zIndex = tile.propertyArt.zIndex ?? Math.max(tile.screenY - 2, 1);
+      : tile.screenY + getArtStructureOffset(tile).y - (propertyArt.rise ?? Math.max(height - tileHeight, 0));
+    const zIndex = propertyArt.zIndex ?? Math.max(tile.screenY - 2, 1);
 
     return [
       `left:${left}px`,
@@ -791,15 +834,16 @@ function getStructureStyle(tile) {
 }
 
 function getStructureArtSource(propertyArt, propertyLevel) {
-  if (!propertyArt) {
+  const artConfig = getPropertyArtConfig(propertyArt, propertyLevel);
+  if (!artConfig) {
     return null;
   }
 
-  if (propertyArt.src) {
-    return propertyArt.src;
+  if (artConfig.src) {
+    return artConfig.src;
   }
 
-  const levelEntries = Object.entries(propertyArt.levels ?? {})
+  const levelEntries = Object.entries(artConfig.levels ?? {})
     .map(([level, src]) => [Number(level), src])
     .filter(([level, src]) => Number.isFinite(level) && typeof src === 'string')
     .sort((left, right) => left[0] - right[0]);
@@ -1484,7 +1528,7 @@ function renderBoard() {
         `;
 
       return `
-        <article class="${structureClass}" data-level="${propertyLevel}" data-property-id="${tile.propertyId}" style="${getStructureStyle(tile)}">
+        <article class="${structureClass}" data-level="${propertyLevel}" data-property-id="${tile.propertyId}" style="${getStructureStyle(tile, propertyLevel)}">
           ${structureBodyMarkup}
         </article>
       `;
