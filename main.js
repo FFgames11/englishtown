@@ -188,25 +188,18 @@ const propertyCatalog = {
       width: 118,
       height: 104,
       position: {
-        left: 329,
-        top: 392,
+        left: 282,
+        top: 413,
       },
+      zIndex: 460,
       levelStyles: {
         2: {
           width: 112,
           height: 119,
-          position: {
-            left: 332,
-            top: 377,
-          },
         },
         3: {
           width: 106,
           height: 127,
-          position: {
-            left: 335,
-            top: 369,
-          },
         },
       },
     },
