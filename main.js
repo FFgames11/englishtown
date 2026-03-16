@@ -143,6 +143,8 @@ const propertyCatalog = {
       layout: 'css',
       levels: {
         1: './assets/buildings/churchlvl1.png',
+        2: './assets/buildings/churchlvl2.png',
+        3: './assets/buildings/churchlvl3.png',
       },
     },
   },

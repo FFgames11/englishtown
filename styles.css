@@ -862,8 +862,22 @@ button {
 
 /* Building art placement lives here so each upgraded asset can be tuned by hand. */
 .structure-church[data-level="0"],
-.structure-church[data-level="1"],
-.structure-church[data-level="2"],
+.structure-church[data-level="1"] {
+  --structure-left: 281px;
+  --structure-top: 29px;
+  --structure-z: 0;
+  --structure-width: 132px;
+  --structure-height: 117px;
+}
+
+.structure-church[data-level="2"] {
+  --structure-left: 281px;
+  --structure-top: 29px;
+  --structure-z: 0;
+  --structure-width: 132px;
+  --structure-height: 117px;
+}
+
 .structure-church[data-level="3"] {
   --structure-left: 281px;
   --structure-top: 29px;
