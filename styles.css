@@ -882,19 +882,19 @@ button {
 }
 
 .structure-bank[data-level="2"] {
-  --structure-left: 382px;
-  --structure-top: 37px;
+  --structure-left: 403px;
+  --structure-top: 102px;
   --structure-z: 0;
-  --structure-width: 178px;
-  --structure-height: 178px;
+  --structure-width: 108px;
+  --structure-height: 108px;
 }
 
 .structure-bank[data-level="3"] {
-  --structure-left: 408px;
-  --structure-top: 102px;
+  --structure-left: 376px;
+  --structure-top: 36px;
   --structure-z: 0;
-  --structure-width: 112px;
-  --structure-height: 112px;
+  --structure-width: 192px;
+  --structure-height: 182px;
 }
 
 .structure-library[data-level="0"],
@@ -915,11 +915,11 @@ button {
 }
 
 .structure-library[data-level="3"] {
-  --structure-left: 273px;
-  --structure-top: 372px;
+  --structure-left: 282px;
+  --structure-top: 413px;
   --structure-z: 460;
-  --structure-width: 156px;
-  --structure-height: 177px;
+  --structure-width: 106px;
+  --structure-height: 127px;
 }
 
 .player-token {
