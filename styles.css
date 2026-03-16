@@ -879,11 +879,11 @@ button {
 }
 
 .structure-church[data-level="3"] {
-  --structure-left: 281px;
-  --structure-top: 29px;
+  --structure-left: 274px;
+  --structure-top: 11px;
   --structure-z: 0;
-  --structure-width: 132px;
-  --structure-height: 117px;
+  --structure-width: 152px;
+  --structure-height: 137px;
 }
 
 .structure-bank[data-level="0"],
