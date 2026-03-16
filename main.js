@@ -136,7 +136,22 @@ const sentencePracticeTileLabel = 'Sentence Studio';
 const eventTileLabel = 'Listening Lounge';
 const jailTileLabel = 'Jail';
 const propertyCatalog = {
-  church: { label: 'Church', costs: [120, 220, 360] },
+  church: {
+    label: 'Church',
+    costs: [120, 220, 360],
+    art: {
+      levels: {
+        1: './assets/buildings/churchlvl1.png',
+      },
+      width: 132,
+      height: 117,
+      position: {
+        left: 281,
+        top: 29,
+      },
+      zIndex: 0,
+    },
+  },
   bank: {
     label: 'Bank',
     costs: [140, 240, 390],
