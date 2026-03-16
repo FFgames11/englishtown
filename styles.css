@@ -874,11 +874,11 @@ button {
 
 .structure-bank[data-level="0"],
 .structure-bank[data-level="1"] {
-  --structure-left: 395px;
-  --structure-top: 93px;
+  --structure-left: 387px;
+  --structure-top: 74px;
   --structure-z: 0;
-  --structure-width: 122px;
-  --structure-height: 122px;
+  --structure-width: 152px;
+  --structure-height: 152px;
 }
 
 .structure-bank[data-level="2"] {
@@ -902,8 +902,8 @@ button {
   --structure-left: 282px;
   --structure-top: 413px;
   --structure-z: 460;
-  --structure-width: 118px;
-  --structure-height: 104px;
+  --structure-width: 138px;
+  --structure-height: 139px;
 }
 
 .structure-library[data-level="2"] {
@@ -1554,6 +1554,7 @@ button {
 }
 
 @keyframes free-dice-hand-bob {
+
   0%,
   100% {
     transform: translate(0, 0) rotate(0deg);
