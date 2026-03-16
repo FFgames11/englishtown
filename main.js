@@ -140,52 +140,22 @@ const propertyCatalog = {
     label: 'Church',
     costs: [120, 220, 360],
     art: {
+      layout: 'css',
       levels: {
         1: './assets/buildings/churchlvl1.png',
       },
-      width: 132,
-      height: 117,
-      position: {
-        left: 281,
-        top: 29,
-      },
-      zIndex: 0,
     },
   },
   bank: {
     label: 'Bank',
     costs: [140, 240, 390],
     art: {
+      layout: 'css',
       levels: {
         1: './assets/buildings/banklv1.png',
         2: './assets/buildings/banklv2.png',
         3: './assets/buildings/banklv3.png',
       },
-      width: 122,
-      height: 122,
-      position: {
-        left: 395,
-        top: 93,
-      },
-      levelStyles: {
-        2: {
-          width: 108,
-          height: 108,
-          position: {
-            left: 403,
-            top: 102,
-          },
-        },
-        3: {
-          width: 112,
-          height: 112,
-          position: {
-            left: 408,
-            top: 102,
-          },
-        },
-      },
-      zIndex: 0,
     },
   },
   townHall: { label: 'Town Hall', costs: [160, 260, 420] },
@@ -195,27 +165,11 @@ const propertyCatalog = {
     label: 'Library',
     costs: [135, 235, 380],
     art: {
+      layout: 'css',
       levels: {
         1: './assets/buildings/librarylv1.png',
         2: './assets/buildings/librarylv2.png',
         3: './assets/buildings/librarylv3.png',
-      },
-      width: 118,
-      height: 104,
-      position: {
-        left: 282,
-        top: 413,
-      },
-      zIndex: 460,
-      levelStyles: {
-        2: {
-          width: 112,
-          height: 119,
-        },
-        3: {
-          width: 106,
-          height: 127,
-        },
       },
     },
   },
@@ -844,6 +798,9 @@ function getPropertyArtConfig(propertyArt, propertyLevel) {
 function getStructureStyle(tile, propertyLevel = 0) {
   if (tile.propertyArt) {
     const propertyArt = getPropertyArtConfig(tile.propertyArt, propertyLevel);
+    if (propertyArt.layout === 'css') {
+      return '';
+    }
     const width = propertyArt.width ?? tileWidth;
     const height = propertyArt.height ?? Math.round(width / (propertyArt.aspectRatio ?? 1));
     const fixedLeft = propertyArt.position?.left;
@@ -1559,6 +1516,7 @@ function renderBoard() {
       const hasArt = Boolean(tile.propertyArt);
       const structureClass = hasArt ? `board-structure has-art structure-${tile.propertyId}` : 'board-structure';
       const structureArtSrc = getStructureArtSource(tile.propertyArt, propertyLevel);
+      const structureStyle = getStructureStyle(tile, propertyLevel);
       const structureBodyMarkup = hasArt
         ? `
           <img class="board-structure-art" src="${structureArtSrc}" alt="${tile.propertyLabel}">
@@ -1570,7 +1528,7 @@ function renderBoard() {
         `;
 
       return `
-        <article class="${structureClass}" data-level="${propertyLevel}" data-property-id="${tile.propertyId}" style="${getStructureStyle(tile, propertyLevel)}">
+        <article class="${structureClass}" data-level="${propertyLevel}" data-property-id="${tile.propertyId}"${structureStyle ? ` style="${structureStyle}"` : ''}>
           ${structureBodyMarkup}
         </article>
       `;

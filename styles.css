@@ -783,6 +783,9 @@ button {
 }
 
 .board-structure.has-art {
+  left: var(--structure-left, 0px);
+  top: var(--structure-top, 0px);
+  z-index: var(--structure-z, 1);
   min-height: 0;
   padding: 0;
   border-radius: 0;
@@ -855,6 +858,68 @@ button {
 .board-structure.has-art[data-level="2"],
 .board-structure.has-art[data-level="3"] {
   min-height: 0;
+}
+
+/* Building art placement lives here so each upgraded asset can be tuned by hand. */
+.structure-church[data-level="0"],
+.structure-church[data-level="1"],
+.structure-church[data-level="2"],
+.structure-church[data-level="3"] {
+  --structure-left: 281px;
+  --structure-top: 29px;
+  --structure-z: 0;
+  --structure-width: 132px;
+  --structure-height: 117px;
+}
+
+.structure-bank[data-level="0"],
+.structure-bank[data-level="1"] {
+  --structure-left: 395px;
+  --structure-top: 93px;
+  --structure-z: 0;
+  --structure-width: 122px;
+  --structure-height: 122px;
+}
+
+.structure-bank[data-level="2"] {
+  --structure-left: 403px;
+  --structure-top: 102px;
+  --structure-z: 0;
+  --structure-width: 108px;
+  --structure-height: 108px;
+}
+
+.structure-bank[data-level="3"] {
+  --structure-left: 408px;
+  --structure-top: 102px;
+  --structure-z: 0;
+  --structure-width: 112px;
+  --structure-height: 112px;
+}
+
+.structure-library[data-level="0"],
+.structure-library[data-level="1"] {
+  --structure-left: 282px;
+  --structure-top: 413px;
+  --structure-z: 460;
+  --structure-width: 118px;
+  --structure-height: 104px;
+}
+
+.structure-library[data-level="2"] {
+  --structure-left: 282px;
+  --structure-top: 413px;
+  --structure-z: 460;
+  --structure-width: 112px;
+  --structure-height: 119px;
+}
+
+.structure-library[data-level="3"] {
+  --structure-left: 282px;
+  --structure-top: 413px;
+  --structure-z: 460;
+  --structure-width: 106px;
+  --structure-height: 127px;
 }
 
 .player-token {
