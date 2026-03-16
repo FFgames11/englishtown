@@ -176,7 +176,41 @@ const propertyCatalog = {
   townHall: { label: 'Town Hall', costs: [160, 260, 420] },
   ancestralHouse: { label: 'Ancestral House', costs: [130, 230, 370] },
   commercialCenter: { label: 'Commercial Building', costs: [150, 270, 430] },
-  library: { label: 'Library', costs: [135, 235, 380] },
+  library: {
+    label: 'Library',
+    costs: [135, 235, 380],
+    art: {
+      levels: {
+        1: './assets/buildings/librarylv1.png',
+        2: './assets/buildings/librarylv2.png',
+        3: './assets/buildings/librarylv3.png',
+      },
+      width: 118,
+      height: 104,
+      position: {
+        left: 329,
+        top: 392,
+      },
+      levelStyles: {
+        2: {
+          width: 112,
+          height: 119,
+          position: {
+            left: 332,
+            top: 377,
+          },
+        },
+        3: {
+          width: 106,
+          height: 127,
+          position: {
+            left: 335,
+            top: 369,
+          },
+        },
+      },
+    },
+  },
   marketHall: { label: 'Market Hall', costs: [145, 250, 400] },
   bakery: { label: 'Bakery', costs: [125, 215, 345] },
   schoolhouse: { label: 'Schoolhouse', costs: [155, 255, 410] },
