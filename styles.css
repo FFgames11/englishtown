@@ -914,7 +914,7 @@ button {
 .structure-townHall[data-level="0"],
 .structure-townHall[data-level="1"] {
   --structure-left: 503px;
-  --structure-top: 146px;
+  --structure-top: 156px;
   --structure-z: 0;
   --structure-width: 158px;
   --structure-height: 128px;
@@ -922,18 +922,43 @@ button {
 
 .structure-townHall[data-level="2"] {
   --structure-left: 494px;
-  --structure-top: 131px;
+  --structure-top: 153px;
   --structure-z: 0;
-  --structure-width: 176px;
-  --structure-height: 142px;
+  --structure-width: 166px;
+  --structure-height: 132px;
 }
 
 .structure-townHall[data-level="3"] {
-  --structure-left: 485px;
-  --structure-top: 118px;
+  --structure-left: 495px;
+  --structure-top: 140px;
   --structure-z: 0;
-  --structure-width: 194px;
+  --structure-width: 163px;
   --structure-height: 157px;
+}
+
+.structure-ancestralHouse[data-level="0"],
+.structure-ancestralHouse[data-level="1"] {
+  --structure-left: 523px;
+  --structure-top: 224px;
+  --structure-z: 304;
+  --structure-width: 136px;
+  --structure-height: 136px;
+}
+
+.structure-ancestralHouse[data-level="2"] {
+  --structure-left: 518px;
+  --structure-top: 214px;
+  --structure-z: 304;
+  --structure-width: 148px;
+  --structure-height: 148px;
+}
+
+.structure-ancestralHouse[data-level="3"] {
+  --structure-left: 510px;
+  --structure-top: 190px;
+  --structure-z: 304;
+  --structure-width: 154px;
+  --structure-height: 203px;
 }
 
 .structure-library[data-level="0"],

@@ -172,7 +172,18 @@ const propertyCatalog = {
       },
     },
   },
-  ancestralHouse: { label: 'Ancestral House', costs: [130, 230, 370] },
+  ancestralHouse: {
+    label: 'Ancestral House',
+    costs: [130, 230, 370],
+    art: {
+      layout: 'css',
+      levels: {
+        1: './assets/buildings/ancestralhouselvl1.png',
+        2: './assets/buildings/ancestralhouselvl2.png',
+        3: './assets/buildings/ancestralhouselvl3.png',
+      },
+    },
+  },
   commercialCenter: {
     label: 'Commercial Building',
     costs: [150, 270, 430],
