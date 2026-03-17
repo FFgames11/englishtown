@@ -911,6 +911,31 @@ button {
   --structure-height: 192px;
 }
 
+.structure-townHall[data-level="0"],
+.structure-townHall[data-level="1"] {
+  --structure-left: 503px;
+  --structure-top: 146px;
+  --structure-z: 0;
+  --structure-width: 158px;
+  --structure-height: 128px;
+}
+
+.structure-townHall[data-level="2"] {
+  --structure-left: 494px;
+  --structure-top: 131px;
+  --structure-z: 0;
+  --structure-width: 176px;
+  --structure-height: 142px;
+}
+
+.structure-townHall[data-level="3"] {
+  --structure-left: 485px;
+  --structure-top: 118px;
+  --structure-z: 0;
+  --structure-width: 194px;
+  --structure-height: 157px;
+}
+
 .structure-library[data-level="0"],
 .structure-library[data-level="1"] {
   --structure-left: 282px;
@@ -922,10 +947,10 @@ button {
 
 .structure-library[data-level="2"] {
   --structure-left: 282px;
-  --structure-top: 413px;
+  --structure-top: 398px;
   --structure-z: 460;
-  --structure-width: 132px;
-  --structure-height: 139px;
+  --structure-width: 142px;
+  --structure-height: 160px;
 }
 
 .structure-library[data-level="3"] {
@@ -938,27 +963,27 @@ button {
 
 .structure-commercialCenter[data-level="0"],
 .structure-commercialCenter[data-level="1"] {
-  --structure-left: 420px;
-  --structure-top: 287px;
-  --structure-z: 366;
-  --structure-width: 164px;
-  --structure-height: 145px;
+  --structure-left: 401px;
+  --structure-top: 356px;
+  --structure-z: 376;
+  --structure-width: 140px;
+  --structure-height: 130px;
 }
 
 .structure-commercialCenter[data-level="2"] {
-  --structure-left: 413px;
-  --structure-top: 275px;
-  --structure-z: 366;
-  --structure-width: 178px;
-  --structure-height: 157px;
+  --structure-left: 399px;
+  --structure-top: 357px;
+  --structure-z: 376;
+  --structure-width: 148px;
+  --structure-height: 127px;
 }
 
 .structure-commercialCenter[data-level="3"] {
-  --structure-left: 404px;
-  --structure-top: 259px;
-  --structure-z: 366;
-  --structure-width: 196px;
-  --structure-height: 173px;
+  --structure-left: 345px;
+  --structure-top: 279px;
+  --structure-z: 376;
+  --structure-width: 256px;
+  --structure-height: 223px;
 }
 
 .player-token {
