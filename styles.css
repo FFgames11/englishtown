@@ -938,24 +938,24 @@ button {
 
 .structure-ancestralHouse[data-level="0"],
 .structure-ancestralHouse[data-level="1"] {
-  --structure-left: 523px;
-  --structure-top: 224px;
+  --structure-left: 503px;
+  --structure-top: 289px;
   --structure-z: 304;
   --structure-width: 136px;
   --structure-height: 136px;
 }
 
 .structure-ancestralHouse[data-level="2"] {
-  --structure-left: 518px;
-  --structure-top: 214px;
+  --structure-left: 498px;
+  --structure-top: 257px;
   --structure-z: 304;
-  --structure-width: 148px;
-  --structure-height: 148px;
+  --structure-width: 168px;
+  --structure-height: 168px;
 }
 
 .structure-ancestralHouse[data-level="3"] {
   --structure-left: 510px;
-  --structure-top: 190px;
+  --structure-top: 228px;
   --structure-z: 304;
   --structure-width: 154px;
   --structure-height: 203px;
