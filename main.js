@@ -162,7 +162,18 @@ const propertyCatalog = {
   },
   townHall: { label: 'Town Hall', costs: [160, 260, 420] },
   ancestralHouse: { label: 'Ancestral House', costs: [130, 230, 370] },
-  commercialCenter: { label: 'Commercial Building', costs: [150, 270, 430] },
+  commercialCenter: {
+    label: 'Commercial Building',
+    costs: [150, 270, 430],
+    art: {
+      layout: 'css',
+      levels: {
+        1: './assets/buildings/commercialbuildinglvl1.png',
+        2: './assets/buildings/commercialbuildinglvl2.png',
+        3: './assets/buildings/commercialbuildinglvl3.png',
+      },
+    },
+  },
   library: {
     label: 'Library',
     costs: [135, 235, 380],
