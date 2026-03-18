@@ -1036,6 +1036,31 @@ button {
   --structure-height: 153px;
 }
 
+.structure-bakery[data-level="0"],
+.structure-bakery[data-level="1"] {
+  --structure-left: 136px;
+  --structure-top: 321px;
+  --structure-z: 410;
+  --structure-width: 146px;
+  --structure-height: 152px;
+}
+
+.structure-bakery[data-level="2"] {
+  --structure-left: 130px;
+  --structure-top: 312px;
+  --structure-z: 410;
+  --structure-width: 154px;
+  --structure-height: 154px;
+}
+
+.structure-bakery[data-level="3"] {
+  --structure-left: 124px;
+  --structure-top: 294px;
+  --structure-z: 410;
+  --structure-width: 160px;
+  --structure-height: 169px;
+}
+
 .player-token {
   position: absolute;
   /* 

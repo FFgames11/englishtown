@@ -220,7 +220,18 @@ const propertyCatalog = {
       },
     },
   },
-  bakery: { label: 'Bakery', costs: [125, 215, 345] },
+  bakery: {
+    label: 'Bakery',
+    costs: [125, 215, 345],
+    art: {
+      layout: 'css',
+      levels: {
+        1: './assets/buildings/bakerylvl1.png',
+        2: './assets/buildings/bakerylvl2.png',
+        3: './assets/buildings/bakerylvl3.png',
+      },
+    },
+  },
   schoolhouse: { label: 'Schoolhouse', costs: [155, 255, 410] },
   clinic: { label: 'Clinic', costs: [150, 245, 395] },
   communityHall: { label: 'Community Hall', costs: [145, 240, 385] },
