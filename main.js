@@ -208,7 +208,29 @@ const propertyCatalog = {
       },
     },
   },
-  marketHall: { label: 'Market Hall', costs: [145, 250, 400] },
+  marketHall: {
+    label: 'Market Hall',
+    costs: [145, 250, 400],
+    art: {
+      levels: {
+        1: './assets/buildings/marketlvl1.png',
+        2: './assets/buildings/marketlvl2.png',
+        3: './assets/buildings/marketlvl3.png',
+      },
+      width: 148,
+      height: 148,
+      levelStyles: {
+        2: {
+          width: 172,
+          height: 186,
+        },
+        3: {
+          width: 160,
+          height: 173,
+        },
+      },
+    },
+  },
   bakery: { label: 'Bakery', costs: [125, 215, 345] },
   schoolhouse: { label: 'Schoolhouse', costs: [155, 255, 410] },
   clinic: { label: 'Clinic', costs: [150, 245, 395] },
