@@ -1063,24 +1063,24 @@ button {
 
 .structure-schoolhouse[data-level="0"],
 .structure-schoolhouse[data-level="1"] {
-  --structure-left: -122px;
-  --structure-top: 256px;
+  --structure-left: -212px;
+  --structure-top: 306px;
   --structure-z: 336;
-  --structure-width: 150px;
-  --structure-height: 124px;
+  --structure-width: 140px;
+  --structure-height: 94px;
 }
 
 .structure-schoolhouse[data-level="2"] {
-  --structure-left: -130px;
-  --structure-top: 236px;
+  --structure-left: -200px;
+  --structure-top: 286px;
   --structure-z: 336;
-  --structure-width: 166px;
-  --structure-height: 166px;
+  --structure-width: 126px;
+  --structure-height: 126px;
 }
 
 .structure-schoolhouse[data-level="3"] {
-  --structure-left: -140px;
-  --structure-top: 220px;
+  --structure-left: -240px;
+  --structure-top: 274px;
   --structure-z: 336;
   --structure-width: 176px;
   --structure-height: 176px;
