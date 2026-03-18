@@ -1011,6 +1011,31 @@ button {
   --structure-height: 223px;
 }
 
+.structure-marketHall[data-level="0"],
+.structure-marketHall[data-level="1"] {
+  --structure-left: 27px;
+  --structure-top: 407px;
+  --structure-z: 490;
+  --structure-width: 120px;
+  --structure-height: 120px;
+}
+
+.structure-marketHall[data-level="2"] {
+  --structure-left: 24px;
+  --structure-top: 398px;
+  --structure-z: 480;
+  --structure-width: 132px;
+  --structure-height: 146px;
+}
+
+.structure-marketHall[data-level="3"] {
+  --structure-left: 15px;
+  --structure-top: 394px;
+  --structure-z: 470;
+  --structure-width: 140px;
+  --structure-height: 153px;
+}
+
 .player-token {
   position: absolute;
   /* 

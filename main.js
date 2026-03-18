@@ -212,22 +212,11 @@ const propertyCatalog = {
     label: 'Market Hall',
     costs: [145, 250, 400],
     art: {
+      layout: 'css',
       levels: {
         1: './assets/buildings/marketlvl1.png',
         2: './assets/buildings/marketlvl2.png',
         3: './assets/buildings/marketlvl3.png',
-      },
-      width: 148,
-      height: 148,
-      levelStyles: {
-        2: {
-          width: 172,
-          height: 186,
-        },
-        3: {
-          width: 160,
-          height: 173,
-        },
       },
     },
   },

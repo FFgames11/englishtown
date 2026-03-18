@@ -74,6 +74,8 @@ Git history is available in this folder. The changelog below still includes a re
 - `Word Plot` tiles map to named properties such as `Church`, `Bank`, `Town Hall`, `Ancestral House`, `Commercial Building`, and other town structures.
 - Each word plot owns one placeholder structure rendered outside the tile ring in the board scene.
 - Structure placeholders are intentionally simple isometric cards with labels and level badges so they can be replaced with custom art later.
+- For art-backed properties, keep `main.js` limited to the asset `levels` map and set `art.layout` to `css`.
+- Per-property placement and sizing for art-backed structures should live in `styles.css` under `.structure-{propertyId}[data-level="..."]` rules, matching the existing `church`, `bank`, `townHall`, `ancestralHouse`, `library`, `commercialCenter`, and `marketHall` patterns.
 - Ownership / upgrade rules:
   - first landing: prompt to purchase the property with coins
   - later landings: prompt to upgrade if the property is already owned
