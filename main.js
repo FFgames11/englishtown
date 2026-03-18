@@ -232,7 +232,18 @@ const propertyCatalog = {
       },
     },
   },
-  schoolhouse: { label: 'Schoolhouse', costs: [155, 255, 410] },
+  schoolhouse: {
+    label: 'Schoolhouse',
+    costs: [155, 255, 410],
+    art: {
+      layout: 'css',
+      levels: {
+        1: './assets/buildings/schoollvl1.png',
+        2: './assets/buildings/schoollvl2.png',
+        3: './assets/buildings/schoollvl3.png',
+      },
+    },
+  },
   clinic: { label: 'Clinic', costs: [150, 245, 395] },
   communityHall: { label: 'Community Hall', costs: [145, 240, 385] },
   teaHouse: { label: 'Tea House', costs: [130, 225, 355] },

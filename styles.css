@@ -1061,6 +1061,31 @@ button {
   --structure-height: 159px;
 }
 
+.structure-schoolhouse[data-level="0"],
+.structure-schoolhouse[data-level="1"] {
+  --structure-left: -122px;
+  --structure-top: 256px;
+  --structure-z: 336;
+  --structure-width: 150px;
+  --structure-height: 124px;
+}
+
+.structure-schoolhouse[data-level="2"] {
+  --structure-left: -130px;
+  --structure-top: 236px;
+  --structure-z: 336;
+  --structure-width: 166px;
+  --structure-height: 166px;
+}
+
+.structure-schoolhouse[data-level="3"] {
+  --structure-left: -140px;
+  --structure-top: 220px;
+  --structure-z: 336;
+  --structure-width: 176px;
+  --structure-height: 176px;
+}
+
 .player-token {
   position: absolute;
   /* 
