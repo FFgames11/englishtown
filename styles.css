@@ -1113,27 +1113,52 @@ button {
 
 .structure-communityHall[data-level="0"],
 .structure-communityHall[data-level="1"] {
-  --structure-left: -72px;
-  --structure-top: 102px;
+  --structure-left: -62px;
+  --structure-top: 108px;
   --structure-z: 208;
-  --structure-width: 120px;
-  --structure-height: 120px;
+  --structure-width: 100px;
+  --structure-height: 100px;
 }
 
 .structure-communityHall[data-level="2"] {
-  --structure-left: -78px;
-  --structure-top: 94px;
+  --structure-left: -76px;
+  --structure-top: 87px;
   --structure-z: 208;
-  --structure-width: 132px;
-  --structure-height: 132px;
+  --structure-width: 122px;
+  --structure-height: 122px;
 }
 
 .structure-communityHall[data-level="3"] {
-  --structure-left: -96px;
-  --structure-top: 70px;
+  --structure-left: -100px;
+  --structure-top: 64px;
   --structure-z: 208;
   --structure-width: 150px;
   --structure-height: 150px;
+}
+
+.structure-guildOffice[data-level="0"],
+.structure-guildOffice[data-level="1"] {
+  --structure-left: 52px;
+  --structure-top: 44px;
+  --structure-z: 144;
+  --structure-width: 126px;
+  --structure-height: 100px;
+}
+
+.structure-guildOffice[data-level="2"] {
+  --structure-left: 38px;
+  --structure-top: 23px;
+  --structure-z: 144;
+  --structure-width: 136px;
+  --structure-height: 136px;
+}
+
+.structure-guildOffice[data-level="3"] {
+  --structure-left: 14px;
+  --structure-top: 0px;
+  --structure-z: 144;
+  --structure-width: 154px;
+  --structure-height: 154px;
 }
 
 .player-token {

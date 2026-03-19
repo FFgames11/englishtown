@@ -268,7 +268,18 @@ const propertyCatalog = {
       },
     },
   },
-  guildOffice: { label: 'Guild Office', costs: [150, 250, 405] },
+  guildOffice: {
+    label: 'Guild Office',
+    costs: [150, 250, 405],
+    art: {
+      layout: 'css',
+      levels: {
+        1: './assets/buildings/guildlvl1.png',
+        2: './assets/buildings/guildlvl2.png',
+        3: './assets/buildings/guildlvl3.png',
+      },
+    },
+  },
 };
 const boardTileBlueprints = [
   { kind: 'start', label: startTileLabel },
