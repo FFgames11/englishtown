@@ -244,7 +244,18 @@ const propertyCatalog = {
       },
     },
   },
-  clinic: { label: 'Clinic', costs: [150, 245, 395] },
+  clinic: {
+    label: 'Clinic',
+    costs: [150, 245, 395],
+    art: {
+      layout: 'css',
+      levels: {
+        1: './assets/buildings/cliniclvl1.png',
+        2: './assets/buildings/cliniclvl2.png',
+        3: './assets/buildings/cliniclvl3.png',
+      },
+    },
+  },
   communityHall: { label: 'Community Hall', costs: [145, 240, 385] },
   teaHouse: { label: 'Tea House', costs: [130, 225, 355] },
   guildOffice: { label: 'Guild Office', costs: [150, 250, 405] },

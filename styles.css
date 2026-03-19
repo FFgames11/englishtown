@@ -1079,11 +1079,36 @@ button {
 }
 
 .structure-schoolhouse[data-level="3"] {
-  --structure-left: -240px;
-  --structure-top: 274px;
+  --structure-left: -226px;
+  --structure-top: 284px;
   --structure-z: 336;
-  --structure-width: 176px;
-  --structure-height: 176px;
+  --structure-width: 146px;
+  --structure-height: 146px;
+}
+
+.structure-clinic[data-level="0"],
+.structure-clinic[data-level="1"] {
+  --structure-left: -214px;
+  --structure-top: 242px;
+  --structure-z: 272;
+  --structure-width: 124px;
+  --structure-height: 124px;
+}
+
+.structure-clinic[data-level="2"] {
+  --structure-left: -220px;
+  --structure-top: 222px;
+  --structure-z: 272;
+  --structure-width: 144px;
+  --structure-height: 144px;
+}
+
+.structure-clinic[data-level="3"] {
+  --structure-left: -228px;
+  --structure-top: 208px;
+  --structure-z: 272;
+  --structure-width: 158px;
+  --structure-height: 158px;
 }
 
 .player-token {
