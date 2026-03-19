@@ -1088,27 +1088,27 @@ button {
 
 .structure-clinic[data-level="0"],
 .structure-clinic[data-level="1"] {
-  --structure-left: -214px;
-  --structure-top: 242px;
+  --structure-left: -184px;
+  --structure-top: 166px;
   --structure-z: 272;
-  --structure-width: 124px;
-  --structure-height: 124px;
+  --structure-width: 114px;
+  --structure-height: 106px;
 }
 
 .structure-clinic[data-level="2"] {
-  --structure-left: -220px;
-  --structure-top: 222px;
+  --structure-left: -190px;
+  --structure-top: 159px;
   --structure-z: 272;
-  --structure-width: 144px;
-  --structure-height: 144px;
+  --structure-width: 114px;
+  --structure-height: 114px;
 }
 
 .structure-clinic[data-level="3"] {
-  --structure-left: -228px;
-  --structure-top: 208px;
+  --structure-left: -221px;
+  --structure-top: 128px;
   --structure-z: 272;
-  --structure-width: 158px;
-  --structure-height: 158px;
+  --structure-width: 143px;
+  --structure-height: 143px;
 }
 
 .player-token {
