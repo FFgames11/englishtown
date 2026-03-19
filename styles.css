@@ -1090,7 +1090,7 @@ button {
 .structure-clinic[data-level="1"] {
   --structure-left: -184px;
   --structure-top: 166px;
-  --structure-z: 272;
+  --structure-z: 152;
   --structure-width: 114px;
   --structure-height: 106px;
 }
@@ -1098,7 +1098,7 @@ button {
 .structure-clinic[data-level="2"] {
   --structure-left: -190px;
   --structure-top: 159px;
-  --structure-z: 272;
+  --structure-z: 142;
   --structure-width: 114px;
   --structure-height: 114px;
 }
@@ -1106,7 +1106,7 @@ button {
 .structure-clinic[data-level="3"] {
   --structure-left: -211px;
   --structure-top: 133px;
-  --structure-z: 272;
+  --structure-z: 192;
   --structure-width: 143px;
   --structure-height: 143px;
 }
@@ -1115,7 +1115,7 @@ button {
 .structure-communityHall[data-level="1"] {
   --structure-left: -62px;
   --structure-top: 108px;
-  --structure-z: 208;
+  --structure-z: 100;
   --structure-width: 100px;
   --structure-height: 100px;
 }
@@ -1123,7 +1123,7 @@ button {
 .structure-communityHall[data-level="2"] {
   --structure-left: -76px;
   --structure-top: 87px;
-  --structure-z: 208;
+  --structure-z: 100;
   --structure-width: 122px;
   --structure-height: 122px;
 }
@@ -1131,7 +1131,7 @@ button {
 .structure-communityHall[data-level="3"] {
   --structure-left: -100px;
   --structure-top: 64px;
-  --structure-z: 208;
+  --structure-z: 100;
   --structure-width: 150px;
   --structure-height: 150px;
 }
@@ -1155,8 +1155,8 @@ button {
 
 .structure-guildOffice[data-level="3"] {
   --structure-left: 14px;
-  --structure-top: 0px;
-  --structure-z: 144;
+  --structure-top: -9px;
+  --structure-z: 100;
   --structure-width: 154px;
   --structure-height: 154px;
 }
