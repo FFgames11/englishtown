@@ -1104,11 +1104,36 @@ button {
 }
 
 .structure-clinic[data-level="3"] {
-  --structure-left: -221px;
-  --structure-top: 128px;
+  --structure-left: -211px;
+  --structure-top: 133px;
   --structure-z: 272;
   --structure-width: 143px;
   --structure-height: 143px;
+}
+
+.structure-communityHall[data-level="0"],
+.structure-communityHall[data-level="1"] {
+  --structure-left: -72px;
+  --structure-top: 102px;
+  --structure-z: 208;
+  --structure-width: 120px;
+  --structure-height: 120px;
+}
+
+.structure-communityHall[data-level="2"] {
+  --structure-left: -78px;
+  --structure-top: 94px;
+  --structure-z: 208;
+  --structure-width: 132px;
+  --structure-height: 132px;
+}
+
+.structure-communityHall[data-level="3"] {
+  --structure-left: -96px;
+  --structure-top: 70px;
+  --structure-z: 208;
+  --structure-width: 150px;
+  --structure-height: 150px;
 }
 
 .player-token {

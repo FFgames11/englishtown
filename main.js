@@ -256,8 +256,18 @@ const propertyCatalog = {
       },
     },
   },
-  communityHall: { label: 'Community Hall', costs: [145, 240, 385] },
-  teaHouse: { label: 'Tea House', costs: [130, 225, 355] },
+  communityHall: {
+    label: 'Community Hall',
+    costs: [145, 240, 385],
+    art: {
+      layout: 'css',
+      levels: {
+        1: './assets/buildings/communityhouselvl1.png',
+        2: './assets/buildings/communityhouselvl2.png',
+        3: './assets/buildings/communityhouselvl3.png',
+      },
+    },
+  },
   guildOffice: { label: 'Guild Office', costs: [150, 250, 405] },
 };
 const boardTileBlueprints = [
@@ -283,7 +293,7 @@ const boardTileBlueprints = [
   { kind: 'word_plot', propertyId: 'clinic' },
   { kind: 'event', label: eventTileLabel },
   { kind: 'word_plot', propertyId: 'communityHall' },
-  { kind: 'word_plot', propertyId: 'teaHouse' },
+  { kind: 'phonics_challenge', label: phonicsTileLabel },
   { kind: 'word_plot', propertyId: 'guildOffice' },
 ];
 
