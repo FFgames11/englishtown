@@ -769,6 +769,21 @@ button {
   box-shadow: none;
 }
 
+.board-tile.tile-start::before {
+  content: none;
+}
+
+.board-tile.tile-start::after {
+  inset: 0;
+  clip-path: none;
+  background: center / 100% 100% no-repeat url('./assets/miscellaneous/starttile.png');
+  box-shadow: none;
+}
+
+.board-tile.tile-start .tile-icon {
+  display: none;
+}
+
 .board-tile.tile-phonics_challenge::before {
   content: none;
 }
@@ -858,6 +873,10 @@ button {
 }
 
 .board-tile.tile-word_plot.is-current::after {
+  box-shadow: none;
+}
+
+.board-tile.tile-start.is-current::after {
   box-shadow: none;
 }
 
