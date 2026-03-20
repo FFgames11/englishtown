@@ -799,6 +799,21 @@ button {
   display: none;
 }
 
+.board-tile.tile-event::before {
+  content: none;
+}
+
+.board-tile.tile-event::after {
+  inset: 0;
+  clip-path: none;
+  background: center / 100% 100% no-repeat url('./assets/miscellaneous/eventtile.png');
+  box-shadow: none;
+}
+
+.board-tile.tile-event .tile-icon {
+  display: none;
+}
+
 .board-tile.tile-jail::before {
   content: none;
 }
@@ -851,6 +866,10 @@ button {
 }
 
 .board-tile.tile-sentence_practice.is-current::after {
+  box-shadow: none;
+}
+
+.board-tile.tile-event.is-current::after {
   box-shadow: none;
 }
 
