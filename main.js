@@ -519,6 +519,7 @@ const dom = {
   dialogPrimary: document.querySelector('[data-role="dialog-primary"]'),
   dialogSecondary: document.querySelector('[data-role="dialog-secondary"]'),
   boardStage: document.querySelector('[data-role="board-stage"]'),
+  cameraRig: document.querySelector('[data-role="camera-rig"]'),
   boardPlane: document.querySelector('[data-role="board-plane"]'),
 };
 
@@ -1591,13 +1592,15 @@ function renderHud() {
 }
 
 function renderCamera() {
-  if (!state.tiles.length || !dom.boardStage) {
+  const cameraViewport = dom.boardStage;
+
+  if (!state.tiles.length || !cameraViewport) {
     return;
   }
 
   const currentTile = state.tiles[state.position];
-  const stageWidth = dom.boardStage.clientWidth;
-  const stageHeight = dom.boardStage.clientHeight;
+  const stageWidth = cameraViewport.clientWidth;
+  const stageHeight = cameraViewport.clientHeight;
   const tileCenterX = currentTile.screenX + tileWidth / 2;
   const tileCenterY = currentTile.screenY + tileHeight / 2;
   const targetX = stageWidth * 0.5;

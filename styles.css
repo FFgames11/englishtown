@@ -334,9 +334,29 @@ button {
   position: absolute;
   inset: 0;
   overflow: hidden;
+  isolation: isolate;
+  background: linear-gradient(180deg, #d8eff6 0%, #c8e5f0 54%, #f3eee5 100%);
+}
+
+.board-stage::before,
+.board-stage::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+
+.board-stage::before {
+  inset: 0;
+  background: radial-gradient(circle at 50% 14%, rgba(255, 255, 255, 0.24), transparent 36%);
+  z-index: 0;
+}
+
+.board-stage::after {
+  inset: 0;
   background:
-    radial-gradient(circle at top, rgba(255, 255, 255, 0.44), transparent 36%),
-    linear-gradient(180deg, rgba(214, 241, 251, 0) 0%, rgba(244, 239, 230, 0.4) 100%);
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.2), transparent 34%),
+    linear-gradient(180deg, rgba(190, 228, 241, 0.12) 0%, rgba(255, 255, 255, 0) 44%, rgba(244, 239, 230, 0.18) 100%);
+  z-index: 0;
 }
 
 .minigame-modal {
@@ -674,6 +694,7 @@ button {
 .camera-rig {
   position: absolute;
   inset: 0;
+  overflow: hidden;
 }
 
 .camera-rig {
@@ -685,7 +706,21 @@ button {
   position: absolute;
   inset: 0;
   transform-style: preserve-3d;
-  transition: transform 260ms ease;
+  overflow: visible;
+  will-change: transform;
+  transition: transform 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.board-plane::before {
+  content: "";
+  position: absolute;
+  inset: -33vmax;
+  background: center center / cover no-repeat url('./assets/miscellaneous/mapbg.png');
+  filter: drop-shadow(0 30px 40px rgba(69, 103, 120, 0.16));
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+  background-position-y: -134px;
 }
 
 .board-tile {
@@ -723,6 +758,62 @@ button {
   z-index: 1;
 }
 
+.board-tile.tile-word_plot::before {
+  content: none;
+}
+
+.board-tile.tile-word_plot::after {
+  inset: 0;
+  clip-path: none;
+  background: center / 100% 100% no-repeat url('./assets/miscellaneous/normaltile.png');
+  box-shadow: none;
+}
+
+.board-tile.tile-phonics_challenge::before {
+  content: none;
+}
+
+.board-tile.tile-phonics_challenge::after {
+  inset: 0;
+  clip-path: none;
+  background: center / 100% 100% no-repeat url('./assets/miscellaneous/lexicontile.png');
+  box-shadow: none;
+}
+
+.board-tile.tile-phonics_challenge .tile-icon {
+  display: none;
+}
+
+.board-tile.tile-sentence_practice::before {
+  content: none;
+}
+
+.board-tile.tile-sentence_practice::after {
+  inset: 0;
+  clip-path: none;
+  background: center / 100% 100% no-repeat url('./assets/miscellaneous/sentencetile.png');
+  box-shadow: none;
+}
+
+.board-tile.tile-sentence_practice .tile-icon {
+  display: none;
+}
+
+.board-tile.tile-jail::before {
+  content: none;
+}
+
+.board-tile.tile-jail::after {
+  inset: 0;
+  clip-path: none;
+  background: center / 100% 100% no-repeat url('./assets/miscellaneous/jailtile.png');
+  box-shadow: none;
+}
+
+.board-tile.tile-jail .tile-icon {
+  display: none;
+}
+
 .tile-icon {
   position: absolute;
   inset: 0;
@@ -749,6 +840,22 @@ button {
     inset 0 1px 0 rgba(255, 255, 255, 0.36),
     inset 0 -2px 0 rgba(0, 0, 0, 0.18),
     0 0 0 3px rgba(255, 255, 255, 0.82);
+}
+
+.board-tile.tile-word_plot.is-current::after {
+  box-shadow: none;
+}
+
+.board-tile.tile-phonics_challenge.is-current::after {
+  box-shadow: none;
+}
+
+.board-tile.tile-sentence_practice.is-current::after {
+  box-shadow: none;
+}
+
+.board-tile.tile-jail.is-current::after {
+  box-shadow: none;
 }
 
 .board-structure {
