@@ -413,7 +413,7 @@ const tileThemes = {
 };
 
 const regularTileThemes = [tileThemes.regularMint, tileThemes.regularStone];
-const persistedStateFields = ['position', 'diceCount', 'diceMax', 'overflowDice', 'coins', 'lastRoll', 'activeFreeDiceOfferId', 'properties'];
+const persistedStateFields = ['position', 'diceCount', 'diceMax', 'overflowDice', 'coins', 'premiumCurrency', 'lastRoll', 'activeFreeDiceOfferId', 'properties'];
 
 const state = {
   tiles: [],
@@ -423,14 +423,15 @@ const state = {
   diceMax: defaultDiceCount,
   overflowDice: 0,
   coins: 0,
+  premiumCurrency: 0,
   lastRoll: null,
   status: 'Loading board...',
-  boardMode: 'solo',
   isRolling: false,
   isMoving: false,
   isMiniGameOpen: false,
   isSentenceGameOpen: false,
   isDialogOpen: false,
+  isAttributeInfoOpen: false,
   facing: 'SE',
   isJumping: false,
   activeFreeDiceOfferId: freeDiceOffers[0]?.id ?? null,
@@ -474,10 +475,9 @@ function getDirection(from, to) {
 
 const dom = {
   status: document.querySelector('[data-role="status"]'),
-  progressLabel: document.querySelector('[data-role="progress-label"]'),
   coinCount: document.querySelector('[data-role="coin-count"]'),
-  lastRoll: document.querySelector('[data-role="last-roll"]'),
-  boardMode: document.querySelector('[data-role="board-mode"]'),
+  premiumCurrencyCount: document.querySelector('[data-role="premium-currency-count"]'),
+  attributeInfoTrigger: document.querySelector('[data-role="attribute-info-trigger"]'),
   rollTrigger: document.querySelector('[data-role="roll-trigger"]'),
   diceArt: document.querySelector('[data-role="dice-art"]'),
   diceLabel: document.querySelector('.dice-label'),
@@ -518,6 +518,7 @@ const dom = {
   dialogStatus: document.querySelector('[data-role="dialog-status"]'),
   dialogPrimary: document.querySelector('[data-role="dialog-primary"]'),
   dialogSecondary: document.querySelector('[data-role="dialog-secondary"]'),
+  attributeModal: document.querySelector('[data-role="attribute-modal"]'),
   boardStage: document.querySelector('[data-role="board-stage"]'),
   cameraRig: document.querySelector('[data-role="camera-rig"]'),
   boardPlane: document.querySelector('[data-role="board-plane"]'),
@@ -578,7 +579,7 @@ function normalizePersistedProperties(properties) {
 }
 
 function isAnyModalOpen() {
-  return state.isMiniGameOpen || state.isSentenceGameOpen || state.isDialogOpen;
+  return state.isMiniGameOpen || state.isSentenceGameOpen || state.isDialogOpen || state.isAttributeInfoOpen;
 }
 
 function clampInteger(value, minimum, maximum) {
@@ -666,6 +667,7 @@ function normalizePersistedSnapshot(snapshot, tileCount) {
     diceMax: defaultDiceCount,
     overflowDice: Math.max(0, Math.trunc(snapshot.overflowDice ?? 0)),
     coins: Math.max(0, Math.trunc(snapshot.coins ?? 0)),
+    premiumCurrency: Math.max(0, Math.trunc(snapshot.premiumCurrency ?? 0)),
     lastRoll: rollFaces.includes(snapshot.lastRoll) ? snapshot.lastRoll : null,
     activeFreeDiceOfferId: normalizedOfferId,
     properties: normalizePersistedProperties(snapshot.properties),
@@ -683,6 +685,7 @@ function persistStateSnapshot() {
     diceMax: state.diceMax,
     overflowDice: state.overflowDice,
     coins: state.coins,
+    premiumCurrency: state.premiumCurrency,
     lastRoll: state.lastRoll,
     activeFreeDiceOfferId: state.activeFreeDiceOfferId,
     properties: state.properties,
@@ -1494,6 +1497,39 @@ function renderDialog() {
   dom.dialogSecondary.hidden = true;
 }
 
+function openAttributeInfo() {
+  if (state.isAttributeInfoOpen) {
+    return;
+  }
+
+  updateState({
+    isAttributeInfoOpen: true,
+  });
+}
+
+function closeAttributeInfo() {
+  if (!state.isAttributeInfoOpen) {
+    return;
+  }
+
+  updateState({
+    isAttributeInfoOpen: false,
+  });
+}
+
+function toggleAttributeInfo() {
+  if (state.isAttributeInfoOpen) {
+    closeAttributeInfo();
+    return;
+  }
+
+  openAttributeInfo();
+}
+
+function renderAttributeInfo() {
+  dom.attributeModal.hidden = !state.isAttributeInfoOpen;
+}
+
 function getLandingStatus(tile, coinsEarned) {
   const coinCopy = `+${coinsEarned} coins.`;
 
@@ -1541,10 +1577,9 @@ function renderHud() {
   const activeFreeDiceOffer = getActiveFreeDiceOffer();
 
   dom.status.textContent = state.status;
-  dom.progressLabel.textContent = state.tiles.length ? `${state.position + 1} / ${state.tiles.length}` : '0 / 0';
   dom.coinCount.textContent = state.coins.toLocaleString();
-  dom.lastRoll.textContent = state.lastRoll === null ? '-' : String(state.lastRoll);
-  dom.boardMode.textContent = state.boardMode;
+  dom.premiumCurrencyCount.textContent = state.premiumCurrency.toLocaleString();
+  dom.attributeInfoTrigger.setAttribute('aria-expanded', String(state.isAttributeInfoOpen));
   dom.diceCount.textContent = `${state.diceCount}/${state.diceMax}`;
   dom.diceOverflow.hidden = state.overflowDice === 0;
   dom.diceOverflow.textContent = `+${state.overflowDice}`;
@@ -1562,6 +1597,8 @@ function renderHud() {
       ? 'Sentence open'
     : state.isDialogOpen
       ? 'Tile dialog open'
+    : state.isAttributeInfoOpen
+      ? 'Info open'
     : state.isMoving
       ? 'Moving...'
       : state.diceCount + state.overflowDice > 0
@@ -1583,6 +1620,8 @@ function renderHud() {
         ? 'Sentence practice is open'
       : state.isDialogOpen
         ? 'Tile dialog is open'
+      : state.isAttributeInfoOpen
+        ? 'Attribute info is open'
       : state.isMoving
         ? 'Character is moving'
         : state.diceCount + state.overflowDice === 0
@@ -1681,6 +1720,7 @@ function render() {
   renderMiniGame();
   renderSentenceGame();
   renderDialog();
+  renderAttributeInfo();
 }
 
 function updateState(partialState) {
@@ -1844,6 +1884,7 @@ function bootstrap() {
     diceMax: defaultDiceCount,
     overflowDice: persistedSnapshot?.overflowDice ?? 0,
     coins: persistedSnapshot?.coins ?? 0,
+    premiumCurrency: persistedSnapshot?.premiumCurrency ?? 0,
     lastRoll: persistedSnapshot?.lastRoll ?? null,
     activeFreeDiceOfferId: persistedSnapshot?.activeFreeDiceOfferId ?? freeDiceOffers[0]?.id ?? null,
     properties: persistedSnapshot?.properties ?? buildDefaultPropertiesState(),
@@ -1881,6 +1922,7 @@ function handleDiceStoreClick() {
 }
 
 dom.rollTrigger.addEventListener('click', handleRoll);
+dom.attributeInfoTrigger.addEventListener('click', toggleAttributeInfo);
 dom.freeDiceClaim.addEventListener('click', handleClaimFreeDice);
 dom.diceStoreTrigger.addEventListener('click', handleDiceStoreClick);
 dom.minigameModal.addEventListener('click', (event) => {
@@ -1919,6 +1961,11 @@ dom.sentenceModal.addEventListener('click', (event) => {
 });
 dom.dialogPrimary.addEventListener('click', handleDialogPrimary);
 dom.dialogSecondary.addEventListener('click', closeDialog);
+dom.attributeModal.addEventListener('click', (event) => {
+  if (event.target.closest('[data-role="attribute-close"]') || event.target.classList.contains('minigame-backdrop')) {
+    closeAttributeInfo();
+  }
+});
 window.addEventListener('resize', renderCamera);
 window.addEventListener('beforeunload', () => {
   if (diceIntervalId) {

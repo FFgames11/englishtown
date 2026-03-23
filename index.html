@@ -37,15 +37,8 @@
             <div class="resource-pill">
               <span class="resource-icon gem"></span>
               <div class="resource-copy">
-                <span>Tile</span>
-                <strong data-role="progress-label">0 / 0</strong>
-              </div>
-            </div>
-            <div class="resource-pill">
-              <span class="resource-icon coin"></span>
-              <div class="resource-copy">
-                <span>Mode</span>
-                <strong data-role="board-mode">solo</strong>
+                <span>Tiles</span>
+                <strong data-role="premium-currency-count">0</strong>
               </div>
             </div>
           </div>
@@ -53,22 +46,22 @@
 
         <p class="status-bubble" data-role="status">Loading board...</p>
 
-        <aside class="left-rail">
-          <div class="mini-panel pink">
-            <span class="mini-icon">R</span>
-            <div class="mini-copy">
-              <span>Roll</span>
-              <strong data-role="last-roll">-</strong>
-            </div>
+        <button
+          class="attribute-hud"
+          data-role="attribute-info-trigger"
+          type="button"
+          aria-expanded="false"
+          aria-label="Open attribute bonus details"
+        >
+          <span class="attribute-heart" aria-hidden="true"></span>
+          <div class="attribute-meter" aria-label="Attribute bonus progress 648 out of 700">
+            <span class="attribute-meter-fill" style="width: 92.57%"></span>
+            <strong class="attribute-meter-value">648</strong>
           </div>
-          <div class="mini-panel gold">
-            <span class="mini-icon">P</span>
-            <div class="mini-copy">
-              <span>Pawn</span>
-              <strong>Ready</strong>
-            </div>
-          </div>
-        </aside>
+          <span class="attribute-info-trigger" aria-hidden="true">
+            i
+          </span>
+        </button>
 
         <aside class="right-rail">
           <button class="action-orb orange" type="button" aria-label="Daily rewards">
@@ -176,6 +169,121 @@
             <div class="dialog-actions">
               <button class="dialog-secondary-button" data-role="dialog-secondary" hidden type="button">Not now</button>
               <button class="dialog-primary-button" data-role="dialog-primary" type="button">Continue</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="attribute-modal" data-role="attribute-modal" hidden>
+          <div class="minigame-backdrop"></div>
+          <div class="attribute-card" aria-labelledby="attribute-title" aria-modal="true" role="dialog">
+            <button class="attribute-close" data-role="attribute-close" type="button" aria-label="Close attribute bonus">
+              x
+            </button>
+
+            <span class="attribute-card-badge" aria-hidden="true">
+              <span class="attribute-heart attribute-heart-large"></span>
+            </span>
+
+            <h2 class="attribute-card-title" id="attribute-title">attribute bonus</h2>
+
+            <div class="attribute-card-meter-row">
+              <div class="attribute-card-level">
+                <span class="attribute-heart attribute-heart-small" aria-hidden="true"></span>
+                <strong>Lv.6</strong>
+              </div>
+
+              <div class="attribute-card-progress" aria-label="648 of 700 attribute progress">
+                <span class="attribute-card-progress-fill" style="width: 92.57%"></span>
+                <strong>648/700</strong>
+              </div>
+            </div>
+
+            <p class="attribute-card-copy">
+              Upgrading buildings and increasing the level of chess pieces can increase the prosperity level. The higher
+              the prosperity level, the greater the attribute gain.
+            </p>
+
+            <div class="attribute-info-list">
+              <article class="attribute-info-row">
+                <p class="attribute-info-text">
+                  The income of land block gold coins has increased, and the income of intrusion into the vault has
+                  increased.
+                </p>
+                <strong class="attribute-info-value">30%</strong>
+              </article>
+
+              <article class="attribute-info-row">
+                <p class="attribute-info-text">
+                  Increased the income of intrusion into the vault and boosted block revenue.
+                </p>
+                <strong class="attribute-info-value">25%</strong>
+              </article>
+
+              <article class="attribute-info-row">
+                <p class="attribute-info-text">Golden Pig: Talent Level Upgrade.</p>
+                <strong class="attribute-info-value">1</strong>
+              </article>
+
+              <article class="attribute-info-row">
+                <p class="attribute-info-text">Plunder land gold coin income.</p>
+                <strong class="attribute-info-value">5%</strong>
+              </article>
+
+              <article class="attribute-info-row">
+                <p class="attribute-info-text">Destroy buildings and increase profits.</p>
+                <div class="attribute-info-lock">
+                  <strong>Lv.7</strong>
+                  <span>Unlock</span>
+                </div>
+              </article>
+
+              <article class="attribute-info-row">
+                <p class="attribute-info-text">Occupy construction revenue increases.</p>
+                <div class="attribute-info-lock">
+                  <strong>Lv.8</strong>
+                  <span>Unlock</span>
+                </div>
+              </article>
+
+              <article class="attribute-info-row">
+                <p class="attribute-info-text">Increased ransom income.</p>
+                <div class="attribute-info-lock">
+                  <strong>Lv.9</strong>
+                  <span>Unlock</span>
+                </div>
+              </article>
+
+              <article class="attribute-info-row">
+                <p class="attribute-info-text">The chances of being caught decrease.</p>
+                <div class="attribute-info-lock">
+                  <strong>Lv.10</strong>
+                  <span>Unlock</span>
+                </div>
+              </article>
+
+              <article class="attribute-info-row">
+                <p class="attribute-info-text">Maintenance cost waiver.</p>
+                <div class="attribute-info-lock">
+                  <strong>Lv.11</strong>
+                  <span>Unlock</span>
+                </div>
+              </article>
+
+              <article class="attribute-info-row">
+                <p class="attribute-info-text">Eviction fee waiver.</p>
+                <div class="attribute-info-lock">
+                  <strong>Lv.12</strong>
+                  <span>Unlock</span>
+                </div>
+              </article>
+
+              <article class="attribute-info-row">
+                <p class="attribute-info-text">Decreased dice recovery time.</p>
+                <div class="attribute-info-lock">
+                  <strong>Lv.13</strong>
+                  <span>Unlock</span>
+                </div>
+              </article>
             </div>
           </div>
         </section>
