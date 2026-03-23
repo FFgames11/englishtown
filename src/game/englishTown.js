@@ -1011,19 +1011,37 @@ function getDiceMarkup(face, className, variant) {
   `;
 }
 
+const diceFaceRotations = {
+  1: '-0.1, 0.3, -1',
+  2: '-0.1, 0.6, -0.4',
+  3: '-0.85, -0.42, 0.73',
+  4: '-0.8, 0.3, -0.75',
+  5: '0.3, 0.45, 0.9',
+  6: '-0.16, 0.6, 0.18',
+};
+
 function getDiceCubeMarkup(face) {
+  const rotation = diceFaceRotations[face] ?? diceFaceRotations[1];
+  const diceClasses = ['dice'];
+
+  if (state.isRolling) {
+    diceClasses.push('rolling');
+  } else {
+    diceClasses.push('settled');
+  }
+
   return `
-    <span class="dice-pulse-ring"></span>
-    <span class="dice-cube-wrap">
-      <span class="dice-cube face-${face}">
-        <span class="dice-face front"></span>
-        <span class="dice-face up"></span>
-        <span class="dice-face left"></span>
-        <span class="dice-face right"></span>
-        <span class="dice-face bottom"></span>
-        <span class="dice-face back"></span>
-      </span>
-    </span>
+    <div class="diceWrap">
+      <span class="dice-pulse-ring"></span>
+      <div class="${diceClasses.join(' ')}" style="transform: rotate3d(${rotation}, 180deg);">
+        <div class="diceFace front"></div>
+        <div class="diceFace up"></div>
+        <div class="diceFace left"></div>
+        <div class="diceFace right"></div>
+        <div class="diceFace bottom"></div>
+        <div class="diceFace back"></div>
+      </div>
+    </div>
   `;
 }
 
