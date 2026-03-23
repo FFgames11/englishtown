@@ -141,7 +141,7 @@ button {
   content: "";
   position: absolute;
   inset: -8px -12px -6px;
-  background: url('./assets/player1/p1(default).png') no-repeat;
+  background: url('/assets/player1/p1(default).png') no-repeat;
   background-size: 400% 200%;
   background-position: 0 0;
   transform: translateY(12px) scale(1.08);
@@ -1000,7 +1000,7 @@ button {
   content: "";
   position: absolute;
   inset: -33vmax;
-  background: center center / cover no-repeat url('./assets/miscellaneous/mapbg.png');
+  background: center center / cover no-repeat url('/assets/miscellaneous/mapbg.png');
   filter: drop-shadow(0 30px 40px rgba(69, 103, 120, 0.16));
   pointer-events: none;
   user-select: none;
@@ -1050,7 +1050,7 @@ button {
 .board-tile.tile-word_plot::after {
   inset: 0;
   clip-path: none;
-  background: center / 100% 100% no-repeat url('./assets/miscellaneous/normaltile.png');
+  background: center / 100% 100% no-repeat url('/assets/miscellaneous/normaltile.png');
   box-shadow: none;
 }
 
@@ -1061,7 +1061,7 @@ button {
 .board-tile.tile-start::after {
   inset: 0;
   clip-path: none;
-  background: center / 100% 100% no-repeat url('./assets/miscellaneous/starttile.png');
+  background: center / 100% 100% no-repeat url('/assets/miscellaneous/starttile.png');
   box-shadow: none;
 }
 
@@ -1076,7 +1076,7 @@ button {
 .board-tile.tile-phonics_challenge::after {
   inset: 0;
   clip-path: none;
-  background: center / 100% 100% no-repeat url('./assets/miscellaneous/lexicontile.png');
+  background: center / 100% 100% no-repeat url('/assets/miscellaneous/lexicontile.png');
   box-shadow: none;
 }
 
@@ -1091,7 +1091,7 @@ button {
 .board-tile.tile-sentence_practice::after {
   inset: 0;
   clip-path: none;
-  background: center / 100% 100% no-repeat url('./assets/miscellaneous/sentencetile.png');
+  background: center / 100% 100% no-repeat url('/assets/miscellaneous/sentencetile.png');
   box-shadow: none;
 }
 
@@ -1106,7 +1106,7 @@ button {
 .board-tile.tile-event::after {
   inset: 0;
   clip-path: none;
-  background: center / 100% 100% no-repeat url('./assets/miscellaneous/eventtile.png');
+  background: center / 100% 100% no-repeat url('/assets/miscellaneous/eventtile.png');
   box-shadow: none;
 }
 
@@ -1121,7 +1121,7 @@ button {
 .board-tile.tile-jail::after {
   inset: 0;
   clip-path: none;
-  background: center / 100% 100% no-repeat url('./assets/miscellaneous/jailtile.png');
+  background: center / 100% 100% no-repeat url('/assets/miscellaneous/jailtile.png');
   box-shadow: none;
 }
 
@@ -1606,7 +1606,7 @@ button {
     left 230ms linear,
     top 230ms linear;
   z-index: 5;
-  background-image: url('./assets/player1/p1(default).png');
+  background-image: url('/assets/player1/p1(default).png');
   background-repeat: no-repeat;
   background-size: 480px 320px;
   image-rendering: pixelated;

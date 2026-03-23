@@ -142,9 +142,9 @@ const propertyCatalog = {
     art: {
       layout: 'css',
       levels: {
-        1: './assets/buildings/churchlvl1.png',
-        2: './assets/buildings/churchlvl2.png',
-        3: './assets/buildings/churchlvl3.png',
+        1: '/assets/buildings/churchlvl1.png',
+        2: '/assets/buildings/churchlvl2.png',
+        3: '/assets/buildings/churchlvl3.png',
       },
     },
   },
@@ -154,9 +154,9 @@ const propertyCatalog = {
     art: {
       layout: 'css',
       levels: {
-        1: './assets/buildings/banklv1.png',
-        2: './assets/buildings/banklv2.png',
-        3: './assets/buildings/banklv3.png',
+        1: '/assets/buildings/banklv1.png',
+        2: '/assets/buildings/banklv2.png',
+        3: '/assets/buildings/banklv3.png',
       },
     },
   },
@@ -166,9 +166,9 @@ const propertyCatalog = {
     art: {
       layout: 'css',
       levels: {
-        1: './assets/buildings/townhalllvl1.png',
-        2: './assets/buildings/townhalllvl2.png',
-        3: './assets/buildings/townhalllvl3.png',
+        1: '/assets/buildings/townhalllvl1.png',
+        2: '/assets/buildings/townhalllvl2.png',
+        3: '/assets/buildings/townhalllvl3.png',
       },
     },
   },
@@ -178,9 +178,9 @@ const propertyCatalog = {
     art: {
       layout: 'css',
       levels: {
-        1: './assets/buildings/ancestralhouselvl1.png',
-        2: './assets/buildings/ancestralhouselvl2.png',
-        3: './assets/buildings/ancestralhouselvl3.png',
+        1: '/assets/buildings/ancestralhouselvl1.png',
+        2: '/assets/buildings/ancestralhouselvl2.png',
+        3: '/assets/buildings/ancestralhouselvl3.png',
       },
     },
   },
@@ -190,9 +190,9 @@ const propertyCatalog = {
     art: {
       layout: 'css',
       levels: {
-        1: './assets/buildings/commercialbuildinglvl1.png',
-        2: './assets/buildings/commercialbuildinglvl2.png',
-        3: './assets/buildings/commercialbuildinglvl3.png',
+        1: '/assets/buildings/commercialbuildinglvl1.png',
+        2: '/assets/buildings/commercialbuildinglvl2.png',
+        3: '/assets/buildings/commercialbuildinglvl3.png',
       },
     },
   },
@@ -202,9 +202,9 @@ const propertyCatalog = {
     art: {
       layout: 'css',
       levels: {
-        1: './assets/buildings/librarylv1.png',
-        2: './assets/buildings/librarylv2.png',
-        3: './assets/buildings/librarylv3.png',
+        1: '/assets/buildings/librarylv1.png',
+        2: '/assets/buildings/librarylv2.png',
+        3: '/assets/buildings/librarylv3.png',
       },
     },
   },
@@ -214,9 +214,9 @@ const propertyCatalog = {
     art: {
       layout: 'css',
       levels: {
-        1: './assets/buildings/marketlvl1.png',
-        2: './assets/buildings/marketlvl2.png',
-        3: './assets/buildings/marketlvl3.png',
+        1: '/assets/buildings/marketlvl1.png',
+        2: '/assets/buildings/marketlvl2.png',
+        3: '/assets/buildings/marketlvl3.png',
       },
     },
   },
@@ -226,9 +226,9 @@ const propertyCatalog = {
     art: {
       layout: 'css',
       levels: {
-        1: './assets/buildings/bakerylvl1.png',
-        2: './assets/buildings/bakerylvl2.png',
-        3: './assets/buildings/bakerylvl3.png',
+        1: '/assets/buildings/bakerylvl1.png',
+        2: '/assets/buildings/bakerylvl2.png',
+        3: '/assets/buildings/bakerylvl3.png',
       },
     },
   },
@@ -238,9 +238,9 @@ const propertyCatalog = {
     art: {
       layout: 'css',
       levels: {
-        1: './assets/buildings/schoollvl1.png',
-        2: './assets/buildings/schoollvl2.png',
-        3: './assets/buildings/schoollvl3.png',
+        1: '/assets/buildings/schoollvl1.png',
+        2: '/assets/buildings/schoollvl2.png',
+        3: '/assets/buildings/schoollvl3.png',
       },
     },
   },
@@ -250,9 +250,9 @@ const propertyCatalog = {
     art: {
       layout: 'css',
       levels: {
-        1: './assets/buildings/cliniclvl1.png',
-        2: './assets/buildings/cliniclvl2.png',
-        3: './assets/buildings/cliniclvl3.png',
+        1: '/assets/buildings/cliniclvl1.png',
+        2: '/assets/buildings/cliniclvl2.png',
+        3: '/assets/buildings/cliniclvl3.png',
       },
     },
   },
@@ -262,9 +262,9 @@ const propertyCatalog = {
     art: {
       layout: 'css',
       levels: {
-        1: './assets/buildings/communityhouselvl1.png',
-        2: './assets/buildings/communityhouselvl2.png',
-        3: './assets/buildings/communityhouselvl3.png',
+        1: '/assets/buildings/communityhouselvl1.png',
+        2: '/assets/buildings/communityhouselvl2.png',
+        3: '/assets/buildings/communityhouselvl3.png',
       },
     },
   },
@@ -274,9 +274,9 @@ const propertyCatalog = {
     art: {
       layout: 'css',
       levels: {
-        1: './assets/buildings/guildlvl1.png',
-        2: './assets/buildings/guildlvl2.png',
-        3: './assets/buildings/guildlvl3.png',
+        1: '/assets/buildings/guildlvl1.png',
+        2: '/assets/buildings/guildlvl2.png',
+        3: '/assets/buildings/guildlvl3.png',
       },
     },
   },
@@ -1977,3 +1977,4 @@ window.addEventListener('beforeunload', () => {
 });
 
 bootstrap();
+
