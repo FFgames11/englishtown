@@ -1011,16 +1011,24 @@ function getDiceMarkup(face, className, variant) {
   `;
 }
 
-function renderDice(face) {
-  const leftFace = face === 1 ? 6 : face - 1;
-  const rightFace = face === 6 ? 1 : face + 1;
-
-  dom.diceArt.innerHTML = `
+function getDiceCubeMarkup(face) {
+  return `
     <span class="dice-pulse-ring"></span>
-    ${getDiceMarkup(leftFace, 'dice-ghost ghost-left', `ghost-left-${face}`)}
-    ${getDiceMarkup(rightFace, 'dice-ghost ghost-right', `ghost-right-${face}`)}
-    ${getDiceMarkup(face, 'dice-main', `main-${face}`)}
+    <span class="dice-cube-wrap">
+      <span class="dice-cube face-${face}">
+        <span class="dice-face front"></span>
+        <span class="dice-face up"></span>
+        <span class="dice-face left"></span>
+        <span class="dice-face right"></span>
+        <span class="dice-face bottom"></span>
+        <span class="dice-face back"></span>
+      </span>
+    </span>
   `;
+}
+
+function renderDice(face) {
+  dom.diceArt.innerHTML = getDiceCubeMarkup(face);
 }
 
 function openWordMatchMiniGame() {

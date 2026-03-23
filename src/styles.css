@@ -1779,10 +1779,6 @@ button {
   opacity: 0.72;
 }
 
-.dice-trigger.is-empty .dice-vector {
-  filter: grayscale(0.18) saturate(0.78) drop-shadow(0 14px 18px rgba(72, 55, 42, 0.18));
-}
-
 .dice-trigger-art {
   position: relative;
   width: 128px;
@@ -2056,23 +2052,160 @@ button {
   transform: scale(0.92);
 }
 
-.dice-vector {
-  position: absolute;
+.dice-cube-wrap {
+  position: relative;
   width: 122px;
   height: 122px;
+  display: grid;
+  place-items: center;
+  perspective: 440px;
+  transform: translateY(6px);
+}
+
+.dice-cube {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  transform-style: preserve-3d;
+  transition:
+    transform 220ms cubic-bezier(0.42, 1.57, 0.62, 0.86),
+    filter 180ms ease;
   filter: drop-shadow(0 14px 18px rgba(72, 55, 42, 0.22));
 }
 
-.dice-main {
-  z-index: 2;
+.dice-cube.face-1 {
+  transform: rotateX(-24deg) rotateY(28deg);
 }
 
-.dice-ghost {
-  opacity: 0;
-  z-index: 1;
+.dice-cube.face-2 {
+  transform: rotateX(-114deg) rotateY(28deg);
 }
 
-.dice-trigger:not(:disabled):hover .dice-main {
+.dice-cube.face-3 {
+  transform: rotateX(-24deg) rotateY(118deg);
+}
+
+.dice-cube.face-4 {
+  transform: rotateX(-24deg) rotateY(-62deg);
+}
+
+.dice-cube.face-5 {
+  transform: rotateX(66deg) rotateY(28deg);
+}
+
+.dice-cube.face-6 {
+  transform: rotateX(-24deg) rotateY(208deg);
+}
+
+.dice-face {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  box-sizing: border-box;
+  background: linear-gradient(180deg, #f9f6f2, #e9e2d9);
+  border: 2px solid #fffdf8;
+  border-radius: 20px;
+  transform-style: preserve-3d;
+  box-shadow:
+    inset 0 -10px 16px rgba(182, 169, 154, 0.16),
+    inset 0 8px 10px rgba(255, 255, 255, 0.48);
+}
+
+.dice-face::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: rgba(255, 255, 255, 0.14);
+  transform: translateZ(-1px);
+}
+
+.dice-face::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 50%;
+  left: 50%;
+  margin: -10px 0 0 -10px;
+  background: #1a1a1d;
+  border-radius: 50%;
+  box-shadow: inset 0 2px 3px rgba(255, 255, 255, 0.2);
+  transform: translateZ(1px);
+}
+
+.dice-face.front {
+  transform: translateZ(50px);
+}
+
+.dice-face.front::after {
+  width: 40px;
+  height: 40px;
+  margin: -20px 0 0 -20px;
+  background: #f44a44;
+}
+
+.dice-face.up {
+  transform: rotateX(90deg) translateZ(50px);
+}
+
+.dice-face.up::after {
+  margin: -30px 0 0 -30px;
+  box-shadow: 40px 40px #1a1a1d;
+}
+
+.dice-face.left {
+  transform: rotateY(-90deg) translateZ(50px);
+}
+
+.dice-face.left::after {
+  margin: -40px 0 0 -40px;
+  box-shadow:
+    30px 30px #1a1a1d,
+    60px 60px #1a1a1d;
+}
+
+.dice-face.right {
+  transform: rotateY(90deg) translateZ(50px);
+}
+
+.dice-face.right::after {
+  margin: -30px 0 0 -30px;
+  background: #f44a44;
+  box-shadow:
+    40px 0 #f44a44,
+    0 40px #f44a44,
+    40px 40px #f44a44;
+}
+
+.dice-face.bottom {
+  transform: rotateX(-90deg) translateZ(50px);
+}
+
+.dice-face.bottom::after {
+  margin: -36px 0 0 -36px;
+  box-shadow:
+    26px 26px #1a1a1d,
+    52px 52px #1a1a1d,
+    52px 0 #1a1a1d,
+    0 52px #1a1a1d;
+}
+
+.dice-face.back {
+  transform: rotateX(180deg) translateZ(50px);
+}
+
+.dice-face.back::after {
+  margin: -40px 0 0 -30px;
+  box-shadow:
+    40px 0 #1a1a1d,
+    0 30px #1a1a1d,
+    40px 30px #1a1a1d,
+    0 60px #1a1a1d,
+    40px 60px #1a1a1d;
+}
+
+.dice-trigger:not(:disabled):hover .dice-cube-wrap {
   animation: dice-float 1.8s ease-in-out infinite;
 }
 
@@ -2080,21 +2213,17 @@ button {
   animation: dice-pulse 620ms ease-out infinite;
 }
 
-.dice-trigger.is-rolling .dice-main {
-  animation: dice-spin 260ms linear infinite;
+.dice-trigger.is-empty .dice-cube {
+  filter: grayscale(0.18) saturate(0.78) drop-shadow(0 14px 18px rgba(72, 55, 42, 0.18));
+}
+
+.dice-trigger.is-rolling .dice-cube-wrap {
+  animation: dice-tumble 420ms linear infinite;
+}
+
+.dice-trigger.is-rolling .dice-cube {
+  transition-duration: 120ms;
   filter: blur(1px) drop-shadow(0 14px 18px rgba(72, 55, 42, 0.22));
-}
-
-.dice-trigger.is-rolling .dice-ghost {
-  opacity: 0.62;
-}
-
-.dice-trigger.is-rolling .ghost-left {
-  animation: dice-spin 260ms linear infinite reverse, dice-ghost-left 430ms ease-out infinite;
-}
-
-.dice-trigger.is-rolling .ghost-right {
-  animation: dice-spin 260ms linear infinite, dice-ghost-right 430ms ease-out infinite;
 }
 
 @keyframes dice-spin {
