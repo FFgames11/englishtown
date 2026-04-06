@@ -318,7 +318,19 @@ onMounted(() => {
 
           <button aria-label="Roll dice" class="dice-trigger" data-role="roll-trigger" type="button">
             <span class="sr-only">Roll dice</span>
-            <span class="dice-trigger-art" aria-hidden="true" data-role="dice-art"></span>
+            <span class="dice-trigger-art" aria-hidden="true" data-role="dice-art">
+              <span class="diceWrap">
+                <span class="dice-pulse-ring"></span>
+                <span class="dice settled" data-role="dice-cube">
+                  <span class="diceFace front"></span>
+                  <span class="diceFace up"></span>
+                  <span class="diceFace left"></span>
+                  <span class="diceFace right"></span>
+                  <span class="diceFace bottom"></span>
+                  <span class="diceFace back"></span>
+                </span>
+              </span>
+            </span>
           </button>
           <div class="dice-meter-shell">
             <div

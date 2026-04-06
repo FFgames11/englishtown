@@ -480,6 +480,7 @@ const dom = {
   attributeInfoTrigger: document.querySelector('[data-role="attribute-info-trigger"]'),
   rollTrigger: document.querySelector('[data-role="roll-trigger"]'),
   diceArt: document.querySelector('[data-role="dice-art"]'),
+  diceCube: document.querySelector('[data-role="dice-cube"]'),
   diceLabel: document.querySelector('.dice-label'),
   diceCount: document.querySelector('[data-role="dice-count"]'),
   diceOverflow: document.querySelector('[data-role="dice-overflow"]'),
@@ -1020,33 +1021,22 @@ const diceFaceRotations = {
   6: '-0.16, 0.6, 0.18',
 };
 
-function getDiceCubeMarkup(face) {
+function getDiceTransform(face) {
   const rotation = diceFaceRotations[face] ?? diceFaceRotations[1];
-  const diceClasses = ['dice'];
-
-  if (state.isRolling) {
-    diceClasses.push('rolling');
-  } else {
-    diceClasses.push('settled');
-  }
-
-  return `
-    <div class="diceWrap">
-      <span class="dice-pulse-ring"></span>
-      <div class="${diceClasses.join(' ')}" style="transform: rotate3d(${rotation}, 180deg);">
-        <div class="diceFace front"></div>
-        <div class="diceFace up"></div>
-        <div class="diceFace left"></div>
-        <div class="diceFace right"></div>
-        <div class="diceFace bottom"></div>
-        <div class="diceFace back"></div>
-      </div>
-    </div>
-  `;
+  return `rotate3d(${rotation}, 180deg)`;
 }
 
 function renderDice(face) {
-  dom.diceArt.innerHTML = getDiceCubeMarkup(face);
+  if (!dom.diceCube) {
+    return;
+  }
+
+  dom.diceCube.classList.toggle('rolling', state.isRolling);
+  dom.diceCube.classList.toggle('settled', !state.isRolling);
+
+  if (!state.isRolling) {
+    dom.diceCube.style.transform = getDiceTransform(face);
+  }
 }
 
 function openWordMatchMiniGame() {
